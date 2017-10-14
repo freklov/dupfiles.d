@@ -49,19 +49,19 @@ dupfiles.d/db
 * **db:** Database folder containing the files required for comparison. This folder is empty after the installation.
 
 #### Commands
-* **dfsum.sh** <schema> <table> <directory>
-	* creates a file <schema>.<table> in directory ${DUPFILESDB}. The file contains the checksum and full path of each file in <directory> and subdirectories.
-* **dflist.sh** <schema> 
-	* lists all files with name <schmea>.* in directory ${DUPFILESDB}.
-* **dfcompare.sh** <schema> <table1> <table2>
-	* compares the files <schema>.<table1> (masters) with <schema>.<table2> (duplicates) in directory ${DUPFILESDB}, and creates a file <schema>.DUPFILES in directory ${DUPFILESDB}. The file <schema>.DUPFILES contains a list with files that exist in 'duplicates' and in 'masters' and have the same checksum in 'duplicates' and in 'masters'.
-* **dfcmd.sh** <schema> <command>
-	* creates a file <schema>.execute.<cmd>.sh in current working directory. The file contains one command <command> per file listed in <schema>.DUPLICATES in directory ${DUPFILESDB}.
-* **dfclean.sh** <schema> 
-	* deletes all files with name <schmea>.* from directory ${DUPFILESDB}.
+* **dfsum.sh** \<schema> \<table> \<directory>
+	* creates a file \<schema>.\<table> in directory ${DUPFILESDB}. The file contains the checksum and full path of each file in <directory> and subdirectories.
+* **dflist.sh** [schema]
+	* lists all files with name \<schmea>.* in directory ${DUPFILESDB}.
+* **dfcompare.sh** \<schema> \<table1> \<table2>
+	* compares the files \<schema>.\<table1> (masters) with \<schema>.\<table2> (duplicates) in directory ${DUPFILESDB}, and creates a file \<schema>.DUPFILES in directory ${DUPFILESDB}. The file \<schema>.DUPFILES contains a list with files that exist in 'duplicates' and in 'masters' and have the same checksum in 'duplicates' and in 'masters'.
+* **dfcmd.sh** \<schema> \<command>
+	* creates a file \<schema>.execute.\<cmd>.sh in current working directory. The file contains one command <command> per file listed in \<schema>.DUPLICATES in directory ${DUPFILESDB}.
+* **dfclean.sh** \<schema> 
+	* deletes all files with name \<schmea>.* from directory ${DUPFILESDB}.
 
 #### How it works
-You can use *<schema>*  to group your duplicate searches by a specific name.
+You can use *\<schema>*  to group your duplicate searches by a specific name.
 
 Assumption: You have a folder named „my current“ which is the folder that contains the files you want to keep.  The second folder „my collections“ contains some of the files of „my current“, as well as additional files. You want to eliminate the duplicate files from the „my collections“. folder.
 
@@ -76,6 +76,6 @@ Execute the file doubles.execute.ls.sh in your current working directory.
 
 `sh doubles.execute.ls.sh`
 
-::**NOTE:** The files do not automatically interrupt if an error occurs. Be always careful with the results. Backup your files before deleting it. I strongly recommend to run a full backup of your computer before working with dupfiles.d.::
+**NOTE:** The files do not automatically interrupt if an error occurs. Be always careful with the results. Backup your files before deleting it. I strongly recommend to run a full backup of your computer before working with dupfiles.d.
 
  
