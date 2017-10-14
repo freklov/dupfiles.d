@@ -1,0 +1,12 @@
+export DUPFILESROOT=${HOME}/dupfiles.d
+
+
+
+export DUPFILESBIN=${DUPFILESROOT}/bin
+export DUPFILESDB=${DUPFILESROOT}/db
+export PATH=${DUPFILESBIN}:${PATH}
+
+
+if [ ! -d ${DUPFILESDB} ]; then
+    mkdir -p ${DUPFILESDB}
+fi
